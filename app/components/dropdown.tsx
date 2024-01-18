@@ -36,7 +36,7 @@ export default function Dropdown({
             }`}
           >
             <div className={classes["dropdown-menu-header"]}>
-              <div>Select a subteam </div>
+              <div className={classes["header-text"]}>Select a subteam </div>
               <button className={classes.cross} onClick={toggleDropdown}>
                 <div className={classes["cross-icon"]}>
                   <Image src={Cross} alt="cross icon" priority />

@@ -34,3 +34,17 @@ p {
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "SkyRegularMedium";
+  src: url("/SkyTextMedium-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SkyBold";
+  src: url("/SkyTextMedium-Bold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
