@@ -1,7 +1,7 @@
 @import "../styles/variables";
 
 .dropdown-menu {
-  display: none;
+  visibility: hidden;
 }
 
 .dropdown {
@@ -50,11 +50,8 @@
     position: absolute;
     // width: 100vw;
     // height: 100vh;
-    top: 0;
     left: 0;
     right: 0;
-    // bottom: 0;
-    // margin: 0;
     box-sizing: border-box;
     padding: 24px;
     top: 100%;
@@ -64,15 +61,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(100%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease; // TODO: Fix this
     z-index: 10;
-    overflow: hidden;
     margin-top: 16px;
 
     &.active {
+      visibility: visible;
       opacity: 1;
       transform: translateY(0);
-      top: calc(100% + 10px);
     }
 
     ul {
