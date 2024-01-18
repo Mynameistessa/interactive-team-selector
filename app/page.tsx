@@ -17,11 +17,15 @@ export default function Home() {
     <main className={classes.main}>
       <header className={classes.header}>Sub-teams</header>
       <div className={classes.intro}>
-        <p>
+        <p className={classes["desktop-only"]}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
+        </p>
+        <p className={classes["mobile-only"]}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
 
