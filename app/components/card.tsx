@@ -54,8 +54,7 @@ export default function Card({ selectedSubTeam }: CardProps) {
               {!isPlaying && selectedSubTeamName.video[0]?.placeholder ? (
                 <div className={classes["image-overlay"]}>
                   <Image
-                    layout="fill"
-                    objectFit="cover"
+                    fill
                     src={selectedSubTeamName.video[0].placeholder.url}
                     alt={selectedSubTeamName.video[0].placeholder.alt}
                     className={classes["image-component"]}
