@@ -35,9 +35,9 @@ export default function Card({ selectedSubTeam }: CardProps) {
   return (
     <div className={classes.card}>
       <div className={classes.content}>
-        <div className={classes.left}>
+        <div className={classes.information}>
           <div className={classes.text}>21 jobs available</div>
-          <h1>{selectedSubTeamName.title}</h1>
+          <div className={classes.title}>{selectedSubTeamName.title}</div>
           <div className={classes.text}>{selectedSubTeamName.body}</div>
           <Link
             href={selectedSubTeamName.cta[0].href}
@@ -46,7 +46,7 @@ export default function Card({ selectedSubTeam }: CardProps) {
             {selectedSubTeamName.cta[0].text}
           </Link>
         </div>
-        <div className={classes.right}>
+        <div className={classes["media-container"]}>
           {selectedSubTeamName.video?.length ? (
             <div className={classes["video-container"]}>
               {!isPlaying && selectedSubTeamName.video[0]?.placeholder ? (
