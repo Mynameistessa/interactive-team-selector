@@ -22,12 +22,14 @@ export default function Dropdown({
   };
   return (
     <div className={classes.dropdown}>
-      <button className={classes["dropdown-button"]} onClick={toggleDropdown}>
-        {selectedValue || "Select a sub-team"}
-        <div className={classes.icon}>
-          <Image src={downChevron} alt="down chevron" />
-        </div>
-      </button>
+      <div className={classes["button-container"]}>
+        <button className={classes["dropdown-button"]} onClick={toggleDropdown}>
+          {selectedValue || "Select a sub-team"}
+          <div className={classes.icon}>
+            <Image src={downChevron} alt="down chevron" />
+          </div>
+        </button>
+      </div>
       {isOpen && (
         <>
           <div
@@ -61,7 +63,9 @@ export default function Dropdown({
             </ul>
           </div>
           <div
-            className={classes["dropdown-overlay"]}
+            className={`${classes["dropdown-overlay"]} ${
+              isOpen ? classes.active : ""
+            }`}
             onClick={toggleDropdown}
           ></div>
         </>

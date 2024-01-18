@@ -4,20 +4,17 @@
   display: none;
 }
 
-.dropdown-menu.active {
-  display: block;
-}
-
-.icon {
-  margin-left: 8px;
-}
-
 .dropdown {
   position: relative;
-  width: 327px;
+  // width: 327px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: $sky-text;
+
+  .button-container {
+    justify-content: center;
+    display: flex;
+  }
 
   &-overlay {
     display: none;
@@ -32,7 +29,7 @@
 
   &-button {
     display: flex;
-    width: 100%;
+    width: 327px;
     align-items: center;
     padding: 10px 15px;
     background-color: $white;
@@ -51,13 +48,13 @@
 
   &-menu {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    // top: 0;
+    // width: 100vw;
+    // height: 100vh;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    margin: 0;
+    // bottom: 0;
+    // margin: 0;
     box-sizing: border-box;
     padding: 24px;
     top: 100%;
@@ -66,8 +63,8 @@
     border-radius: 8px 8px 0px 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0.3s ease;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 10;
     overflow: hidden;
     margin-top: 16px;
@@ -75,6 +72,7 @@
     &.active {
       opacity: 1;
       transform: translateY(0);
+      top: calc(100% + 10px);
     }
 
     ul {
@@ -85,6 +83,10 @@
       li {
         padding: 10px 15px;
         border-bottom: 1px solid $sky-white;
+
+        &:first-child {
+          margin-top: 16px;
+        }
 
         &:last-child {
           border-bottom: none;
@@ -97,6 +99,10 @@
     }
   }
 
+  .active {
+    display: block;
+  }
+
   &-menu.active ~ &-overlay {
     display: block;
   }
@@ -107,14 +113,19 @@
     font-size: $font-size-button;
     font-weight: $font-weight-medium;
     align-items: center;
-    padding-bottom: 16px;
+    padding: 16px 0;
     color: $sky-text;
+  }
+
+  .icon {
+    margin-left: 8px;
   }
 
   .cross {
     margin-left: auto;
     padding: 16px;
     border-radius: 8px;
+    height: 42px;
     border: none;
     background-color: $medium-grey;
 
@@ -125,7 +136,12 @@
   }
 }
 
+.header-text {
+  font-family: "SkyRegularMedium", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+}
+
 .selected {
   color: $primary-color;
-  font-weight: $font-weight-medium;
+  font-family: "SkyBold", sans-serif;
 }
