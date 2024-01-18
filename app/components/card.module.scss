@@ -1,3 +1,5 @@
+@import "../styles/variables";
+
 .card {
   background-color: $white;
   display: flex;
@@ -15,7 +17,6 @@
 
       .title {
         font-size: $font-size-header;
-        margin-bottom: 40px;
         line-height: 1.2;
         font-family: "SkyRegular", sans-serif;
 
@@ -52,7 +53,7 @@
         border-radius: 8px;
         padding: 10px 20px;
         font-size: 1.125rem;
-        // margin-bottom: 64px; // not working
+        margin-bottom: 64px; // not working
         cursor: pointer;
         margin-bottom: 0;
         text-decoration: none;
@@ -180,6 +181,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.textbody {
+  margin-top: 40px;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-top: 24px;
   }
 }
 

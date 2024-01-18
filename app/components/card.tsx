@@ -38,7 +38,9 @@ export default function Card({ selectedSubTeam }: CardProps) {
         <div className={classes.information}>
           <div className={classes.text}>21 jobs available</div>
           <div className={classes.title}>{selectedSubTeamName.title}</div>
-          <div className={classes.text}>{selectedSubTeamName.body}</div>
+          <div className={`${classes.text} ${classes.textbody}`}>
+            {selectedSubTeamName.body}
+          </div>
           <Link
             href={selectedSubTeamName.cta[0].href}
             className={classes["find-jobs-button"]}

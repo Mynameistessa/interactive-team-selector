@@ -15,8 +15,8 @@ export default function Home() {
 
   return (
     <main className={classes.main}>
+      <header className={classes.header}>Sub-teams</header>
       <div className={classes.intro}>
-        <header className={classes.header}>Sub-teams</header>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -37,9 +37,9 @@ export default function Home() {
       </div>
       <div className={classes["mobile-only"]}>
         <Dropdown
-          subteams={data.data.team.subTeamCard}
-          setSelectedSubTeam={setSelectedSubTeamName}
-          selectedSubTeam={selectedSubTeamName}
+          options={data.data.team.subTeamCard}
+          onChange={setSelectedSubTeamName}
+          selectedValue={selectedSubTeamName}
         />
       </div>
 
