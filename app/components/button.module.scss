@@ -10,6 +10,7 @@
   background-color: transparent;
   text-wrap: nowrap;
   color: $sky-text;
+  font-family: "SkyRegular", sans-serif;
 
   &:hover:not(.active) {
     background-color: $hover-white;
