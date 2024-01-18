@@ -1,0 +1,26 @@
+@import "../styles/variables";
+
+.button {
+  width: fit-content;
+  border: 1px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 4px 12px;
+  font-size: $font-size-button;
+  background-color: transparent;
+  text-wrap: nowrap;
+  color: $sky-text;
+
+  &:hover:not(.active) {
+    background-color: $hover-white;
+  }
+}
+
+.active {
+  background-color: $primary-color;
+  color: $white;
+
+  &:hover {
+    background-color: $hover-blue;
+  }
+}

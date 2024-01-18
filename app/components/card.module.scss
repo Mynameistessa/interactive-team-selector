@@ -1,0 +1,152 @@
+@import "../styles/variables";
+
+.card {
+  background-color: $white;
+
+  .content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: stretch;
+
+    // TODO: FIX THIS
+    // custom breakpoint to support design
+    @media (max-width: 480px) {
+      .content {
+        flex-direction: column;
+      }
+    }
+
+    .left {
+      padding: 40px;
+      flex: 1;
+
+      h1 {
+        font-size: $font-size-header;
+        margin-bottom: 40px;
+        line-height: 1.2;
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: $font-mobile-card-header;
+          margin-bottom: 24px;
+        }
+      }
+
+      .text {
+        font-size: $font-large;
+        margin-bottom: 24px;
+        color: rgba(0, 0, 0, 0.59);
+      }
+
+      .find-jobs-button {
+        border: 2px solid $primary-color;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 1.125rem;
+        // margin-bottom: 64px; // not working
+        cursor: pointer;
+        margin-bottom: 0;
+        text-decoration: none;
+        display: inline-block;
+        color: $primary-color;
+        &:hover {
+          background-color: #f2f2f2; // Add a hover effect
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex: 1;
+      width: 100%;
+
+      align-items: stretch; // not working?
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        // height: 0; // Use padding to dictate aspect ratio
+      }
+
+      .iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .play-button-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        border: none;
+      }
+
+      .play-icon {
+        position: absolute;
+        left: -30%;
+        top: -17%;
+        background: transparent;
+
+        @media (max-width: $breakpoint-mobile) {
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .play-label {
+        color: white;
+        font-size: $font-large;
+        width: 156px;
+        height: 54px;
+        border-radius: 8px;
+        background-color: transparent;
+
+        display: flex;
+        align-items: center; // Vertically centers the child
+        justify-content: center;
+
+        // frosted glass
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); // safari support
+        border: 1px solid rgba(255, 255, 255, 0.05);
+
+        @media (max-width: $breakpoint-mobile) {
+          display: none;
+        }
+      }
+
+      .image-component {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .gradient {
+      height: 6px;
+      background-image: linear-gradient(
+        90deg,
+        #ff7800 0%,
+        #f80032 20%,
+        #ff00a0 40%,
+        #8c28ff 60%,
+        #0023ff 80%,
+        #1798ff 100%
+      );
+      padding: 0;
+      width: 100%;
+    }
+  }
+}

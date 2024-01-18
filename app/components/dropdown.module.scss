@@ -1,0 +1,122 @@
+@import "../styles/variables";
+
+.dropdown-menu {
+  display: none; // start hidden
+}
+
+.dropdown-menu.active {
+  display: block; // show on active
+  // Transition styles
+}
+
+.icon {
+  margin-left: 8px;
+}
+
+.dropdown {
+  position: relative;
+  width: 327px; // or max-width for a specific size
+  border-radius: 4px; // based on your design
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: $sky-text;
+
+  &-button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    border: 2px solid $primary-color;
+    cursor: pointer;
+    font-size: 16px;
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+      background-color: #f8f8f8; // or any hover color
+    }
+  }
+
+  &-menu {
+    position: absolute; // Fixed relative to the viewport
+    width: 100vw; // Full width of the viewport
+    height: 100vh; // Full height of the viewport
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0; // Reset default margin
+    padding: 0;
+
+    // Ensure that padding is accounted for in width calculations if box-sizing isn't border-box
+    box-sizing: border-box;
+
+    padding: 24px;
+    top: 100%;
+    left: 0;
+    background-color: $white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px 8px 0px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 10;
+    overflow: hidden; // for the sliding effect
+    margin-top: 16px;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 10px 15px;
+        border-bottom: 1px solid $sky-white;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+
+  &-menu-header {
+    display: flex;
+    border-bottom: 1px solid;
+    font-size: $font-size-button;
+    font-weight: $font-weight-medium;
+    align-items: center;
+    padding-bottom: 16px;
+    color: $sky-text;
+  }
+
+  .cross {
+    margin-left: auto;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: $medium-grey;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.selected {
+  color: $primary-color;
+  font-weight: $font-weight-medium;
+}
