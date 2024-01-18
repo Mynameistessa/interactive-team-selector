@@ -13,6 +13,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-
-// https://www.datocms-assets.com/104939/1702572627-tpd3.jpg)
-// https://www.datocms-assets.com

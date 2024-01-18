@@ -1,9 +1,6 @@
 "use client";
 
 import classes from "./button.module.scss";
-import { Subteam } from "@/types/model";
-
-// todo: add alt text
 
 export default function Button({
   content,
@@ -12,7 +9,7 @@ export default function Button({
 }: {
   content: string;
   isActive: boolean;
-  onClick: any; // update later
+  onClick: () => void;
 }) {
   return (
     <button

@@ -1,12 +1,11 @@
 @import "../styles/variables";
 
 .dropdown-menu {
-  display: none; // start hidden
+  display: none;
 }
 
 .dropdown-menu.active {
-  display: block; // show on active
-  // Transition styles
+  display: block;
 }
 
 .icon {
@@ -15,8 +14,8 @@
 
 .dropdown {
   position: relative;
-  width: 327px; // or max-width for a specific size
-  border-radius: 4px; // based on your design
+  width: 327px;
+  border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: $sky-text;
 
@@ -36,7 +35,7 @@
     width: 100%;
     align-items: center;
     padding: 10px 15px;
-    background-color: #ffffff;
+    background-color: $white;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     border: 2px solid $primary-color;
@@ -46,7 +45,7 @@
 
     &:hover,
     &:focus {
-      background-color: #f8f8f8; // or any hover color
+      background-color: #f8f8f8;
     }
   }
 
