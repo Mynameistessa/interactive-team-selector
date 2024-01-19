@@ -8,9 +8,11 @@ import Button from "./components/button";
 import data from "@/public/data.json";
 import Dropdown from "./components/dropdown";
 
+const { subTeamCard } = data.data.team;
+
 export default function Home() {
   const [selectedSubTeamName, setSelectedSubTeamName] = useState(
-    data.data.team.subTeamCard[0].title
+    subTeamCard[0].title
   );
 
   return (
@@ -30,7 +32,7 @@ export default function Home() {
       </div>
 
       <div className={`${classes["button-row"]} ${classes["desktop-only"]}`}>
-        {data.data.team.subTeamCard.map((subteam, index) => (
+        {subTeamCard.map((subteam, index) => (
           <Button
             key={index}
             content={subteam.title}
@@ -41,7 +43,7 @@ export default function Home() {
       </div>
       <div className={classes["mobile-only"]}>
         <Dropdown
-          options={data.data.team.subTeamCard}
+          options={subTeamCard}
           onChange={setSelectedSubTeamName}
           selectedValue={selectedSubTeamName}
         />
