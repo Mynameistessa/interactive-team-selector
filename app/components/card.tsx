@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import classes from "./card.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import playIcon from "@/assets/play.svg";
 import data from "@/public/data.json";
 
@@ -13,6 +13,10 @@ interface CardProps {
 
 export default function Card({ selectedSubTeam }: CardProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    setIsPlaying(false);
+  }, [selectedSubTeam]);
 
   const selectedSubTeamName = data.data.team.subTeamCard.find(
     (subTeam) => subTeam.title === selectedSubTeam
@@ -59,7 +63,6 @@ export default function Card({ selectedSubTeam }: CardProps) {
                     alt={selectedSubTeamName.video[0].placeholder.alt}
                     className={classes["image-component"]}
                   />
-
                   <button
                     className={classes["play-button-container"]}
                     type="button"
