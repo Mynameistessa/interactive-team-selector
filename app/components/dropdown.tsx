@@ -30,46 +30,42 @@ export default function Dropdown({
           </div>
         </button>
       </div>
-      {isOpen && (
-        <>
-          <div
-            className={`${classes["dropdown-menu"]} ${
-              isOpen ? classes.active : ""
-            }`}
-          >
-            <div className={classes["dropdown-menu-header"]}>
-              <div className={classes["header-text"]}>Select a subteam </div>
-              <button className={classes.cross} onClick={toggleDropdown}>
-                <div className={classes["cross-icon"]}>
-                  <Image src={Cross} alt="cross icon" priority />
-                </div>
-              </button>
+      <div
+        className={`${classes["dropdown-menu"]} ${
+          isOpen ? classes.active : ""
+        }`}
+      >
+        <div className={classes["dropdown-menu-header"]}>
+          <div className={classes["header-text"]}>Select a subteam </div>
+          <button className={classes.cross} onClick={toggleDropdown}>
+            <div className={classes["cross-icon"]}>
+              <Image src={Cross} alt="cross icon" priority />
             </div>
-            <ul>
-              {options.map((subteam, index) => (
-                <li
-                  key={index}
-                  onClick={() => {
-                    toggleDropdown();
-                    return onChange(subteam.title);
-                  }}
-                  className={
-                    subteam.title === selectedValue ? classes.selected : ""
-                  }
-                >
-                  {subteam.title}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div
-            className={`${classes["dropdown-overlay"]} ${
-              isOpen ? classes.active : ""
-            }`}
-            onClick={toggleDropdown}
-          ></div>
-        </>
-      )}
+          </button>
+        </div>
+        <ul>
+          {options.map((subteam, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                toggleDropdown();
+                return onChange(subteam.title);
+              }}
+              className={
+                subteam.title === selectedValue ? classes.selected : ""
+              }
+            >
+              {subteam.title}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div
+        className={`${classes["dropdown-overlay"]} ${
+          isOpen ? classes.active : ""
+        }`}
+        onClick={toggleDropdown}
+      ></div>
     </div>
   );
 }
